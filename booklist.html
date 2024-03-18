@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Subject List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        li {
+            padding: 10px 20px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+
+        li:hover {
+            background-color: #e9e9e9;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select a Subject</h1>
+        <ul id="subjectList">
+            <li onclick="navigateToPage('c_programming.html')">C Programming Language</li>
+            <li onclick="navigateToPage('data_structure.html')">Data Structure</li>
+            <li onclick="navigateToPage('fundamentals_of_computer.html')">Fundamentals of Computer</li>
+            <li onclick="navigateToPage('fundamentals_of_electronics.html')">Fundamentals of Electronics</li>
+            <li onclick="navigateToPage('java.html')">Java-Core to Advanced</li>
+        </ul>
+        
+    </div>
+
+    <script>
+        function navigateToPage(pageName) {
+            if (pageName) {
+                // Save the selected page name to localStorage
+                localStorage.setItem('selectedPage', pageName);
+            } else {
+                // If no page is selected, get the saved page name from localStorage
+                pageName = localStorage.getItem('selectedPage');
+            }
+            // Navigate to the selected page
+            window.location.href = pageName;
+        }
+    </script>
+</body>
+</html>
