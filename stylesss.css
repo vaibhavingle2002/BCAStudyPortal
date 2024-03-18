@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+  }
+  
+  .container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .notes-container {
+    border: 1px solid #ccc;
+    padding: 20px; /* Increase padding */
+    margin-bottom: 20px;
+    border-radius: 10px; /* Increase border radius */
+    overflow: hidden;
+  }
+  
+  .note {
+    border-bottom: 1px solid #ccc;
+    padding: 20px; /* Increase padding */
+    position: relative;
+  }
+  
+  .note textarea {
+    width: calc(100% - 40px); /* Adjust width */
+    height: 150px; /* Increase height */
+    border: none;
+    resize: vertical;
+    font-size: 18px; /* Increase font size */
+    padding: 10px; /* Increase padding */
+    border-radius: 5px;
+    background-color: #f1f1f1;
+  }
+  
+  .actions {
+    position: absolute;
+    top: 10px; /* Adjust top position */
+    right: 10px; /* Adjust right position */
+  }
+  
+  .add-note-container {
+    text-align: center;
+  }
+  
+  .add-note-btn,
+  .download-btn {
+    margin: 10px;
+    padding: 12px 24px; /* Increase padding */
+    border: none;
+    border-radius: 10px; /* Increase border radius */
+    background-color: #adff2f;
+    color: #000;
+    cursor: pointer;
+    font-size: 20px; /* Increase font size */
+    font-weight: bold; /* Add font weight */
+    letter-spacing: 2px;
+    outline: none;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Add box shadow */
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .add-note-btn:hover,
+  .download-btn:hover {
+    background-color: #9dff2f; /* Adjust hover background color */
+  }
+  
+  .delete-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #ccc;
+    font-size: 24px; /* Increase font size */
+    position: absolute;
+    top: 10px; /* Adjust top position */
+    right: 50px; /* Adjust right position */
+    transition: color 0.3s;
+  }
+  
+  .delete-btn:hover {
+    color: #ff0000; /* Change hover color */
+  }
+  

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notes Upload and Download</title>
+<link rel="stylesheet" href="professor.css">
+</head>
+<body>
+<div class="container">
+    <h1>Notes Upload and Download</h1>
+    <div class="upload-section">
+        <h2>Upload Notes</h2>
+        <input type="password" id="keyInput" placeholder="Enter Key">
+        <input type="text" id="pdfNameInput" placeholder="PDF Name">
+        <input type="text" id="pdfDescriptionInput" placeholder="PDF Description">
+        <input type="file" id="fileInput">
+        <button onclick="uploadNotes()">Upload</button>
+    </div>
+    <div class="download-section">
+        <h2>Download Notes</h2>
+        <div id="notesList"></div>
+    </div>
+</div>
+<script>
+    const key = "12345678";
+    let notes = [];
+
+    function uploadNotes() {
+        const keyInput = document.getElementById("keyInput").value;
+        const pdfName = document.getElementById("pdfNameInput").value;
+        const pdfDescription = document.getElementById("pdfDescriptionInput").value;
+        const fileInput = document.getElementById("fileInput");
+
+        if (keyInput !== key) {
+            alert("Invalid key. Please try again.");
+            return;
+        }
+
+        const file = fileInput.files[0];
+        const reader = new FileReader();
+        reader.onload = function () {
+            const pdfData = reader.result;
+            notes.push({ name: pdfName, description: pdfDescription, pdfData: pdfData });
+            displayNotes();
+            // Clear input fields after upload
+            document.getElementById("pdfNameInput").value = "";
+            document.getElementById("pdfDescriptionInput").value = "";
+            document.getElementById("fileInput").value = "";
+            document.getElementById("keyInput").value = "";
+        };
+        reader.readAsDataURL(file);
+    }
+
+    function displayNotes() {
+        const notesList = document.getElementById("notesList");
+        notesList.innerHTML = "";
+        notes.forEach((note, index) => {
+            const noteItem = document.createElement("div");
+            noteItem.classList.add("note-item");
+            noteItem.innerHTML = `<a class="note-link" href="${note.pdfData}" download="${note.name}.pdf">${note.name}</a> - ${note.description}`;
+            notesList.appendChild(noteItem);
+        });
+    }
+
+    displayNotes();
+</script>
+</body>
+</html>

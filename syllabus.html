@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syllabus</title>
+    <link rel="stylesheet" href="syllabus.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>BCA (CBCS) Syllabus Copies</h1>
+    </div>
+    <div class="container">
+        <div class="semester">
+            <h2>Semester 1</h2>
+            <button onclick="downloadPDF('syllabus/bca_sem1.pdf')">Download</button>
+        </div>
+        <div class="semester">
+            <h2>Semester 2</h2>
+            <button onclick="downloadPDF('syllabus/bca_sem2.pdf')">Download</button>
+        </div>
+        <div class="semester">
+            <h2>Semester 3</h2>
+            <button onclick="downloadPDF('syllabus/bca_sem3&4.pdf')">Download</button>
+        </div>
+        <div class="semester">
+            <h2>Semester 4</h2>
+            <button onclick="downloadPDF('syllabus/bca_sem3&4.pdf')">Download</button>
+        </div>
+    </div>
+
+    <script>
+        function downloadPDF(pdf) {
+            window.location.href = pdf;
+        }
+    </script>
+</body>
+
+</html>
